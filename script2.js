@@ -12,8 +12,16 @@
  *    console.log(r.getArea());   // => 200
  */
 function Rectangle(width, height) {
-  throw new Error('Not implemented');
-}
+  let rectangle = {
+    width: width,
+    height: height
+  }
+  rectangle.getArea = function () {
+    return this.width * this.height
+  }
+  return rectangle
+};
+
 
 /**
  * Returns the n last items of the specified arrays
@@ -26,7 +34,14 @@ function Rectangle(width, height) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
-  throw new Error('Not implemented');
+  if (n <= 0) {
+    return []
+  }
+  let newArr = []
+  for (let i = arr.length - n; i < arr.length; i++) {
+    newArr.push(arr[i])
+  }
+  return newArr
 }
 
 /**
@@ -71,5 +86,5 @@ function getArrayOfPositives(arr) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-  throw new Error('Not implemented');
+
 }
